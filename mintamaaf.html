@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Permintaan Maaf Untuk Pacar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+        }
+        .heart {
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1);}
+            50% { transform: scale(1.15);}
+            100% { transform: scale(1);}
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center">
+        <div class="mb-4">
+            <i class="fas fa-heart text-pink-500 text-5xl heart"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-pink-600 mb-2">Permintaan Maaf Untuk Kamu</h1>
+        <p class="text-gray-700 mb-6">
+            Aku tahu aku telah membuatmu sedih. Aku benar-benar minta maaf atas kesalahan dan sikapku. Aku sangat sayang sama kamu dan nggak mau kehilangan kamu. 
+            <br><br>
+            Tolong maafkan aku ya, aku janji akan berusaha jadi lebih baik untuk kamu. 
+        </p>
+        <button id="maafBtn" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-2 rounded shadow transition mb-4">
+            Maafkan Aku
+        </button>
+        <div id="responseMsg" class="hidden mt-4 text-green-600 font-semibold"></div>
+        <div class="mt-6 text-xs text-gray-400">&copy; 2025 Riza/zek</div>
+    </div>
+    <script>
+        document.getElementById('maafBtn').onclick = function() {
+            this.disabled = true;
+            this.textContent = "Menunggu Jawaban...";
+            setTimeout(function() {
+                document.getElementById('responseMsg').textContent = "Terima kasih sudah menerima permintaan maafku, i love you sayang ❤️";
+                document.getElementById('responseMsg').classList.remove('hidden');
+                document.getElementById('maafBtn').style.display = "none";
+                // Ganti nomor di bawah dengan nomor WhatsApp pacar kamu (format: 628xxxxxxxxxx)
+                var nomor = "6282114214955";
+                var pesan = encodeURIComponent("Aku sudah klik tombol maafkan aku di web, aku benar-benar minta maaf dan sayang kamu ❤️");
+                window.open("https://wa.me/" + nomor + "?text=" + pesan, "_blank");
+            }, 1500);
+        };
+    </script>
+</body>
+</html>
